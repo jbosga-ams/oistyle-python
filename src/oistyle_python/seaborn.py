@@ -4,6 +4,7 @@ import sys
 import urllib.request as request
 
 with request.urlopen('https://raw.githubusercontent.com/jbosga-ams/oistyle/main/src/oistyle/base_style.json') as response:
+    data = response.read()
     base_style = json.loads(data)
 colors = base_style["colors"]
 
