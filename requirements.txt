@@ -1,0 +1,5 @@
+pandas
+plotly
+xlrd
+openpyxl
+ipywidgets>=7.5
