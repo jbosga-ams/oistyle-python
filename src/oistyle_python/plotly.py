@@ -4,7 +4,7 @@ import sys
 import plotly.graph_objects as go
 import urllib.request as request
 
-with request.urlopen('https://raw.githubusercontent.com/jbosga-ams/oistyle/main/oistyle/base_style.json') as response:
+with request.urlopen('https://raw.githubusercontent.com/jbosga-ams/oistyle/main/base_style.json') as response:
     data = response.read()
     base_style = json.loads(data)
 
