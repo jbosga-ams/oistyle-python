@@ -1,5 +1,5 @@
 import plotly.express as px
-from src.styler import BaseStyle
+from styler import BaseStyle
 
 class Pie:
     basestyle = BaseStyle()
