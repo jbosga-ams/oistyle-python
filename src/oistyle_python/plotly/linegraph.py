@@ -1,5 +1,5 @@
 import plotly.express as px
-from styler import BaseStyle
+from basestyle import BaseStyle
 
 class Line:
     basestyle = BaseStyle()
