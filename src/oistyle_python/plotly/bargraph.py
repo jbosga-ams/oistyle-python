@@ -1,5 +1,5 @@
 import plotly.express as px
-from basestyle import BaseStyle
+from oistyle_python.plotly import BaseStyle
 import pandas as pd
 
 
