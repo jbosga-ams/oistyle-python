@@ -6,10 +6,10 @@ import json
 class BaseStyle:
     style_url = "https://raw.githubusercontent.com/jbosga-ams/oistyle/main/base_style.json"
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.grab_styling()
         
-    def grab_styling(self, style_path: str = None):
+    def grab_styling(self, style_path: str = None) -> None:
         if not style_path:
             try:
                 res = requests.get(self.style_url).json()
@@ -22,7 +22,7 @@ class BaseStyle:
         for k, v in res.items():
             setattr(self, k, v)
     
-    def _get_axis_format(self):
+    def _get_axis_format(self) -> dict:
         self.gridline_color = "#dbdbdb" # Jorren vragen om deze aan te passen
         
         return {
@@ -36,7 +36,7 @@ class BaseStyle:
             "showgrid": False,
         }
     
-    def _get_base_template_layout(self):
+    def _get_base_template_layout(self) -> go.layout.Template:
         return go.layout.Template(           
             layout={
                 "font": {"family": self.font, "size": self.font_size},
@@ -46,7 +46,12 @@ class BaseStyle:
                 }
             )
     
-    def get_base_template(self, graph_type: str = None, orientation: str = None, colors: str = None):
+    def get_base_template(
+        self, 
+        graph_type: str = None, 
+        orientation: str = None, 
+        colors: str = None
+        ) -> go.layout.Template:
         """[summary]
 
         Args:

@@ -1,5 +1,6 @@
 import plotly.express as px
 from basestyle import BaseStyle
+import pandas as pd
 
 
 class Bar:
@@ -138,5 +139,37 @@ class Bar:
 
         if orientation == "h":
             fig.update_yaxes(automargin=True)
+
+        return fig
+
+
+    @classmethod
+    def likert(
+        cls,
+        data,
+        x: str,
+        y: str,
+        color: str = None,
+        color_discrete_sequence: list = None,
+        orientation='v',
+        greys = None,
+        order = None,
+        **kwargs
+    ):
+        if order:
+            data[x] = pd.categorical(data[x])
+
+
+
+        fig = cls.bar(
+            data=data,
+            x=x,
+            y=y,
+            color=color,
+            color_discrete_sequence=color_discrete_sequence,
+            barmode="stack",
+            orientation=orientation,
+            **kwargs
+        )
 
         return fig

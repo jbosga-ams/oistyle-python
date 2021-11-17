@@ -1,16 +1,16 @@
 import plotly.express as px
 from basestyle import BaseStyle
 
-class Pie:
+class Donut:
     basestyle = BaseStyle()
 
     @classmethod
-    def pie(
+    def donut(
         cls,
         data,
         names,
         values,
-        hole: float = 0.4,
+        hole: float = 0.8,
         width = 750,
         height = 490,
         text_format: str = None,

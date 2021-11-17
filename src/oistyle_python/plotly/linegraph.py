@@ -10,6 +10,7 @@ class Line:
         data,
         x,
         y,
+        orientation,
         color: None,
         width = 750,
         height = 490,
@@ -23,7 +24,7 @@ class Line:
             color=color,
             width=width, 
             height=height, 
-            template = BaseStyle().get_base_template(),
+            template = BaseStyle().get_base_template(graph_type='bar', orientation=orientation),
             **kwargs
             )
         
