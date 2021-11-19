@@ -14,10 +14,9 @@ class BaseStyle:
             try:
                 res = requests.get(self.style_url).json()
             except ConnectionError:
-                print("Failed grabbing basestyle from the interwebs")
-                # Add option to manually provide json file
+                raise Exception("Failed grabbing json with style-info, try supplying style_path")
         else:
-            res = json.loads()
+            res = json.loads(style_path)
 
         for k, v in res.items():
             setattr(self, k, v)

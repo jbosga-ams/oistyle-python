@@ -19,7 +19,7 @@ class Bar:
         width=750,
         height=490,
         **kwargs
-    ):
+    ) -> px.bar:
         fig = px.bar(
             data_frame=data,
             x=x,
@@ -49,14 +49,14 @@ class Bar:
         color_discrete_sequence: list = None,
         orientation='v',
         **kwargs
-    ):
+    ) -> px.bar:      
         fig = cls.bar(
             data=data,
             x=x,
             y=y,
             color=color,
             color_discrete_sequence=color_discrete_sequence,
-            barmode="relative",
+            barmode="stack",
             orientation=orientation,
             **kwargs
         )
@@ -78,7 +78,7 @@ class Bar:
         color_discrete_sequence: list = None,
         orientation='v',
         **kwargs
-    ):
+    ) -> px.bar:
         fig = cls.bar(
             data=data,
             x=x,
@@ -102,8 +102,7 @@ class Bar:
         color_discrete_sequence: list = None,
         orientation='v',
         **kwargs
-    ):
-
+    ) -> px.bar:
         fig = cls.bar(
             data=data,
             x=x,
@@ -126,7 +125,7 @@ class Bar:
         color_discrete_sequence: list = None,
         orientation='v',
         **kwargs
-    ):
+    ) -> px.bar:
 
         fig = cls.bar(
             data=data,
@@ -139,37 +138,5 @@ class Bar:
 
         if orientation == "h":
             fig.update_yaxes(automargin=True)
-
-        return fig
-
-
-    @classmethod
-    def likert(
-        cls,
-        data,
-        x: str,
-        y: str,
-        color: str = None,
-        color_discrete_sequence: list = None,
-        orientation='v',
-        greys = None,
-        order = None,
-        **kwargs
-    ):
-        if order:
-            data[x] = pd.categorical(data[x])
-
-
-
-        fig = cls.bar(
-            data=data,
-            x=x,
-            y=y,
-            color=color,
-            color_discrete_sequence=color_discrete_sequence,
-            barmode="stack",
-            orientation=orientation,
-            **kwargs
-        )
 
         return fig

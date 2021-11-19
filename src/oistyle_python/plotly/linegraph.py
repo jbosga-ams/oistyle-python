@@ -14,8 +14,9 @@ class Line:
         color: None,
         width = 750,
         height = 490,
+        color_discrete_map = None,
         **kwargs
-        ):
+        )  -> px.line:
 
         fig = px.line(
             data_frame=data, 
@@ -24,6 +25,7 @@ class Line:
             color=color,
             width=width, 
             height=height, 
+            color_discrete_map=color_discrete_map,
             template = BaseStyle().get_base_template(graph_type='bar', orientation=orientation),
             **kwargs
             )

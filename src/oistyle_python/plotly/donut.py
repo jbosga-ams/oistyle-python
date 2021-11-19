@@ -15,7 +15,7 @@ class Donut:
         height = 490,
         text_format: str = None,
         **kwargs
-        ):
+        ) -> px.pie:
 
         fig = px.pie(
             data_frame=data, 
