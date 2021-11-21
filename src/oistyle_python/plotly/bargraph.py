@@ -25,8 +25,7 @@ class Bar:
             x=x,
             y=y,
             color=color,
-            template=cls.basestyle.get_base_template(
-                'bar', orientation=orientation),
+            template=cls.basestyle.get_base_template("bar", orientation=orientation),
             width=width,
             color_discrete_sequence=color_discrete_sequence,
             height=height,
@@ -35,7 +34,8 @@ class Bar:
         )
 
         fig.update_layout(
-            dict(xaxis_title_text='', yaxis_title_text='', legend_title_text=''))
+            dict(xaxis_title_text="", yaxis_title_text="", legend_title_text="")
+        )
 
         return fig
 
@@ -47,9 +47,9 @@ class Bar:
         y: str,
         color: str = None,
         color_discrete_sequence: list = None,
-        orientation='v',
+        orientation="v",
         **kwargs
-    ) -> px.bar:      
+    ) -> px.bar:
         fig = cls.bar(
             data=data,
             x=x,
@@ -61,9 +61,9 @@ class Bar:
             **kwargs
         )
 
-        if orientation == 'v':
+        if orientation == "v":
             fig.update_xaxes(showticklabels=False)
-        if orientation == 'h':
+        if orientation == "h":
             fig.update_yaxes(showticklabels=False)
 
         return fig
@@ -76,7 +76,7 @@ class Bar:
         y: str,
         color: str = None,
         color_discrete_sequence: list = None,
-        orientation='v',
+        orientation="v",
         **kwargs
     ) -> px.bar:
         fig = cls.bar(
@@ -100,7 +100,7 @@ class Bar:
         y: str,
         color: str = None,
         color_discrete_sequence: list = None,
-        orientation='v',
+        orientation="v",
         **kwargs
     ) -> px.bar:
         fig = cls.bar(
@@ -123,7 +123,7 @@ class Bar:
         x: str,
         y: str,
         color_discrete_sequence: list = None,
-        orientation='v',
+        orientation="v",
         **kwargs
     ) -> px.bar:
 

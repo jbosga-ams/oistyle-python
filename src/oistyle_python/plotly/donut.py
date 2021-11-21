@@ -1,6 +1,7 @@
 import plotly.express as px
 from oistyle_python.plotly.basestyle import BaseStyle
 
+
 class Donut:
     basestyle = BaseStyle()
 
@@ -11,24 +12,24 @@ class Donut:
         names,
         values,
         hole: float = 0.8,
-        width = 750,
-        height = 490,
+        width=750,
+        height=490,
         text_format: str = None,
         **kwargs
-        ) -> px.pie:
+    ) -> px.pie:
 
         fig = px.pie(
-            data_frame=data, 
-            names=names, 
-            values=values, 
-            width=width, 
-            height=height, 
-            hole=hole, 
-            template = BaseStyle().get_base_template(),
+            data_frame=data,
+            names=names,
+            values=values,
+            width=width,
+            height=height,
+            hole=hole,
+            template=BaseStyle().get_base_template(),
             **kwargs
-            )
-        
+        )
+
         if text_format:
             fig.update_traces(texttemplate=text_format)
-        
+
         return fig
