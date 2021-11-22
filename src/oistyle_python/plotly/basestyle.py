@@ -21,7 +21,7 @@ class BaseStyle:
                     "Failed grabbing json with style-info, try supplying style_path"
                 )
         else:
-            res = json.loads(style_path)
+            res = json.load(style_path)
 
         for k, v in res.items():
             setattr(self, k, v)
